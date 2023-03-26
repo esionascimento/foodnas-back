@@ -1,6 +1,6 @@
 import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, OneToMany } from 'typeorm';
 import { Usuario } from './usuario.entity';
-import { ItensCompra } from './compra-item.entity';
+import { ItensCompra } from './itens_compra.entity';
 
 @Entity()
 export class Compra {

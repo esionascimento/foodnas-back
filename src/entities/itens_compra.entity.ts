@@ -1,5 +1,5 @@
 import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
-import { Compra } from './compra.entity';
+import { Compra } from './compras.entity';
 import { Lote } from './lote.entity';
 import { Usuario } from './usuario.entity';
 import { BaseEntity } from './base.entity';
