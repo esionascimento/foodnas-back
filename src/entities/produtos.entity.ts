@@ -1,8 +1,8 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, OneToMany } from 'typeorm';
-import { Usuario } from './usuario.entity';
-import { Fornecedor } from './fornecedores.entity';
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, OneToMany, JoinColumn } from 'typeorm';
+import { Usuario } from './usuarios.entity';
+import { Fornecedores } from './fornecedores.entity';
 import { Lote } from './lote.entity';
-import { VendaItem } from './venda-item.entity';
+import { VendaItem } from './itens_venda.entity';
 
 @Entity()
 export class Produto {
@@ -18,14 +18,15 @@ export class Produto {
   @Column()
   unidade: string;
 
-  @ManyToOne(() => Usuario, usuario => usuario.produtos, { onDelete: 'CASCADE' })
-  usuario: Usuario;
-
-  @OneToMany(() => Fornecedor, fornecedor => fornecedor.produtos)
-  fornecedores: Fornecedor[];
-
+  @ManyToOne(() => Fornecedores, fornecedores => fornecedores.produtos)
+  fornecedores: Fornecedores;
+  
   @OneToMany(() => Lote, lote => lote.produto)
   lotes: Lote[];
+
+  @ManyToOne(() => Usuario, usuario => usuario.produtos, { onDelete: 'CASCADE' })
+  @JoinColumn({ name: 'id_usuario' })
+  usuario: Usuario;
 
   // @OneToMany(() => ItemVenda, itemVenda => itemVenda.produto)
   // itensVenda: VendaItem[];
