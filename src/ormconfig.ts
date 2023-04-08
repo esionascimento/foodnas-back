@@ -1,16 +1,18 @@
 import { DataSource, DataSourceOptions } from 'typeorm';
 import 'dotenv/config';
 
+console.log("driname: ", __dirname)
+
 export const dataSourceOptions: DataSourceOptions = {
-  url: `mysql://v3uc99nseljiazto9ep6:pscale_pw_uEFghr3LRYD0OeO3m5WymDQPHuDHNqpKciRyfCczbkP@aws.connect.psdb.cloud/foodnas?ssl={"rejectUnauthorized":true}`,
+  url: process.env.URL_DATABASE,
   type: 'mysql',
   // host: process.env.DATABASE_HOST,
   // port: parseInt(process.env.DATABASE_PORT, 10) || 3306,
   // username: process.env.DATABASE_USERNAME,
   // password: process.env.DATABASE_PASSWORD,
   // database: process.env.DATABASE_DATABASE,
-  entities: ['C:\\Users\\esion\\gitHub\\foodnas-back\\src\\entities\\comida.entity.ts'],
-  migrations: ['dist/database/migrations/*{.ts,.js}'],
+  entities: [ __dirname + '/entities/comida.entity.js' ],
+  migrations: [ __dirname + '/database/migrations/*{.ts,.js}'],
   synchronize: true,
   logging: true,
   "extra": {
