@@ -3,13 +3,13 @@ import { Venda } from './vendas.entity';
 import { BaseEntity } from './base.entity';
 
 @Entity()
-export class MeioPagamentos extends BaseEntity {
+export class MeiosPagamento extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column({ type: 'varchar', length: 100 })
   descricao: string;
 
-  @ManyToMany(() => Venda, (venda) => venda.meioPagamento)
+  @ManyToMany(() => Venda, (venda) => venda.meiosPagamento)
   vendas: Venda[];
 }
