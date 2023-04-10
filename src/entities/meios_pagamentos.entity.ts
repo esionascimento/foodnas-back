@@ -1,6 +1,6 @@
-import { Column, Entity, ManyToMany, PrimaryGeneratedColumn } from "typeorm";
-import { Venda } from "./vendas.entity";
-import { BaseEntity } from "./base.entity";
+import { Column, Entity, ManyToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { Venda } from './vendas.entity';
+import { BaseEntity } from './base.entity';
 
 @Entity()
 export class MeioPagamentos extends BaseEntity {
@@ -10,6 +10,6 @@ export class MeioPagamentos extends BaseEntity {
   @Column({ type: 'varchar', length: 100 })
   descricao: string;
 
-  @ManyToMany(() => Venda, (venda) => venda.meiosPagamento)
+  @ManyToMany(() => Venda, (venda) => venda.meioPagamento)
   vendas: Venda[];
 }
