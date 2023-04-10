@@ -6,14 +6,14 @@ import { ItensCompra } from './itens_compra.entity';
 import { ItensOrcamento } from './itens_orcamento.entity';
 import { VendaItem } from './itens_venda.entity';
 import { Lote } from './lote.entity';
-import { MeioPagamentos } from './meios_pagamentos.entity';
+import { MeiosPagamento } from './meios_pagamento.entity';
 import { MovimentacoesEstoque } from './movimentacoes_estoque.entity';
 import { Orcamento } from './orcamentos.entity';
 import { Preco } from './precos.entity';
 import { Produto } from './produtos.entity';
 import { Usuario } from './usuarios.entity';
 import { Venda } from './vendas.entity';
-import { VendasMeioPagamentos } from './vendas_meios_pagamentos.entity';
+import { VendasMeiosPagamento } from './vendas_meios_pagamento.entity';
 
 const entities = [
   BaseEntity,
@@ -26,11 +26,11 @@ const entities = [
   ItensOrcamento,
   VendaItem,
   Lote,
-  MeioPagamentos,
+  MeiosPagamento,
   MovimentacoesEstoque,
   Orcamento,
   Preco,
-  VendasMeioPagamentos,
+  VendasMeiosPagamento,
   Venda,
 ];
 
